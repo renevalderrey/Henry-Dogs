@@ -1,0 +1,22 @@
+.dogs {
+  width: 220px;
+  height: 340px;
+  margin: 40px;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  border: 1px solid black;
+}
+
+.body {
+  margin: 0 8px;
+  border-radius: 4px;
+  height: 40%;
+  bottom: 4px;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+}
+

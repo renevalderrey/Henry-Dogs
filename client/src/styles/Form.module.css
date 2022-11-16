@@ -1,0 +1,41 @@
+.button {
+  margin: 10px auto;
+  height: 25px;
+  width: 100px;
+  background: gray;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom-right-radius: 10px;
+  margin-right: 1000px;
+}
+
+.input {
+  margin: 10px auto;
+  width: 300px;
+  height: 19px;
+  border-bottom-left-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.select {
+  margin: 10px;
+  height: 25px;
+  background: gray;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom-right-radius: 10px;
+}
+
+.button2 {
+  margin: 10px auto;
+  height: 25px;
+  width: 300px;
+  background: gray;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom-right-radius: 10px;
+}
+
+.error{
+  color: red
+}
