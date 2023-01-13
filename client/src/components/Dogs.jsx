@@ -2,7 +2,7 @@ import React from "react";
 import DogsCards from "./DogsCards";
 import { getDogs } from "../redux/actions";
 import { connect } from "react-redux";
-import style from "../styles/Dogs.module.css";
+import s from "styled-components";
 
 class Dogs extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Dogs extends React.Component {
         {this.props.currentDogs.length > 0 ? (
           this.props.currentDogs.map((dog) => {
             return (
-              <div key={dog.id} className={style.dogs}>
+              <Div key={dog.id}>
                 <DogsCards
                   image={dog.image}
                   name={dog.name}
@@ -29,7 +29,7 @@ class Dogs extends React.Component {
                   key={dog.id}
                   id={dog.id}
                 />
-              </div>
+              </Div>
             );
           })
         ) : (
@@ -51,5 +51,10 @@ const mapDispatchToProps = (dispatch) => {
     getDogs: () => dispatch(getDogs()),
   };
 };
+
+const Div = s.div`
+  display: inline-block;
+  margin-top: 50px;
+`
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dogs);

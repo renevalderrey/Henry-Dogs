@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Dogs from "./Dogs";
 import Filter from "./Filter";
 import Paginated from "./Paginated";
+import s from "styled-components";
 
 const Home = () => {
   const [refresh, setRefresh] = useState("");
@@ -17,9 +18,7 @@ const Home = () => {
   const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog);
 
   return (
-    <div>
-      <h1>DOGS</h1>
-      <hr />
+    <Container>
       <Filter setRefresh={setRefresh} setCurrentPage={setCurrentPage} />
       <Dogs refresh={refresh} currentDogs={currentDogs} />
       <Paginated
@@ -28,8 +27,13 @@ const Home = () => {
         allDogs={allDogs.length}
         pagination={pagination}
       />
-    </div>
+    </Container>
   );
 };
+
+const Container = s.div`
+  background-color: #464646;
+  position: absolute;
+`
 
 export default Home;
