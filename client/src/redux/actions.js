@@ -13,7 +13,7 @@ export const POST_DOG = "POST_DOG";
 export const getDogs = () => {
   return async function (dispatch) {
     try {
-      const json = await axios.get("http://localhost:3001/dogs");
+      const json = await axios.get("/dogs");
       return dispatch({ type: GET_DOGS, payload: json.data });
     } catch (error) {
       return { error: error.message };
@@ -24,7 +24,7 @@ export const getDogs = () => {
 export const getDogsDetail = (id) => {
   return async function (dispatch) {
     try {
-      const json = await axios.get(`http://localhost:3001/dogs/${id}`);
+      const json = await axios.get(`/dogs/${id}`);
       dispatch({ type: GET_DOGS_DETAIL, payload: json.data });
     } catch (error) {
       alert(error.response.data);
@@ -35,7 +35,7 @@ export const getDogsDetail = (id) => {
 export const getTemperaments = () => {
   return async function (dispatch) {
     try {
-      const json = await axios.get("http://localhost:3001/temperaments");
+      const json = await axios.get("/temperaments");
       dispatch({ type: GET_TEMPERAMENTS, payload: json.data });
     } catch (error) {
       return { error: error.message };
@@ -46,7 +46,7 @@ export const getTemperaments = () => {
 export const getNameDogs = (name) => {
   return async function (dispatch) {
     try {
-      const json = await axios.get(`http://localhost:3001/dogs?name=${name}`);
+      const json = await axios.get(`/dogs?name=${name}`);
       dispatch({ type: GET_NAME_DOGS, payload: json.data });
     } catch (error) {
       alert(error.response.data);
@@ -57,7 +57,7 @@ export const getNameDogs = (name) => {
 export const postDog = (data) => {
   return async function () {
     await axios
-      .post("http://localhost:3001/dog", data)
+      .post("/dog", data)
       .then((res) => alert(res.data.success))
       .catch((err) => alert(err.response.data.error));
   };
